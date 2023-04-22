@@ -1,0 +1,171 @@
+/* importing all fonts used  */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+/* universal property */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-size: 1.5rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+/* header */
+.head{
+    /* background-image: url(bg.jpeg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #17e2a9;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    /* box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.2),  */
+                /* 15px 15px 15px rgba(0, 0, 0, 0.1); */
+}
+.list{
+    display: flex;
+    justify-items: center;
+    padding: 10px;
+}
+.list-item{
+    padding: 20px;
+    list-style: none;
+    border-radius: 15px;
+    transition-duration: 0.3s;
+    transition-property: .list-items;
+    transition-delay: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+.list-item:hover{
+    cursor: pointer;
+    background-color: rgb(35, 186, 12);
+    color: aliceblue;
+    transform: translateY(-5px);
+}
+.icon{
+    padding-right: 45px;
+    border-color: 1px solid #222;
+}
+.icon:hover{
+    cursor: pointer;
+}
+
+/* main body */
+.container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;/*For aligning items inside parent div in centre wrt cross axis*/
+    background: linear-gradient(to right, rgb(0, 0, 0),#25cd66);
+    /* background-image: url(main-bg.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+}
+
+/* left content of container */
+.left{
+    width: 30vw;
+}
+.heading{
+    color: white;
+    text-align: center;
+}
+.sub-heading{
+    margin-top: 15px;
+    color: rgb(232, 210, 182);
+    text-align: center;
+}
+
+/* right content of conatiner */
+.gallery{
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: 120px;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+.box{
+    background-size: cover;
+    color: antiquewhite;
+    background-position: top;
+    display: flex; /*to align name written in the image to center*/
+    justify-content: center;
+    align-items: center;
+    background-color: #222; /*This color is under our background image*/
+    background-blend-mode: difference;
+     /*transition occur in all boxes for 0.5sec with ease-in and ease-out at the time of hover*/
+    
+     transition: all 1s ease-in-out;
+    /*Why this transition not working well when using this command         in .box:hover*/
+    /*This is because when you use this in hover's sate, it will drastically return back to it's original state after hovering from that item*/
+}
+.row-2{
+    grid-row: span 2;
+}
+.col-2{
+    grid-column: span 2;
+}
+.box:hover{
+    background-blend-mode: inherit;
+    cursor: pointer;
+    background-position: center;
+    transform: scale(1.1); /*expands the size of box 1.1 times*/
+}
+
+/* footer-section */
+.foot{
+    height: 10vh;
+    /* background-image: url(bg.jpeg); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    background-color: #17e2a9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+a{
+    text-decoration: none;
+}
+
+/* media queries for device which are having lesser height and width */
+@media screen and (max-width: 1024px) /*Rules apply when width of screen is less than 1024px*/
+{
+    .container{
+        flex-direction: column;
+    }
+    .gallery{
+        width: 100%;
+    }
+    .box{
+        grid-row: span 1;
+        grid-column: span 3;
+    }
+    .list-item:hover{
+        padding-bottom: 5x;
+    }
+    .left{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 5px;
+    }
+    .heading{
+        margin-bottom: -10px;
+    }
+    .sub-heading{
+        margin-bottom: 10px;
+    }
+    .head{
+        height: 15vw;
+    }
+    .list-item{
+        padding-left: 15px;
+        padding-top: 0x;
+    }
+    .list-item{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
